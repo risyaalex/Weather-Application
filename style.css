@@ -33,7 +33,7 @@ h2 {
 
 .app {
     
-    max-width: 500px;
+    max-width: 40%;
     margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
@@ -72,7 +72,8 @@ h2 {
 .weather-info {
     margin-top: 20px;
     padding: 30px;
-    background-color: #ffffff;
+    background-color: #241162;
+    color: #fff;
     border-radius: 4px;
     text-align: left;
 }
@@ -86,23 +87,31 @@ h2 {
     font-weight: bold;
 }
 
-#weather-info img {
-    width: 50px;
-    height: 50px;
-    margin: 10px 0;
-}
-
 #weather-info h2 {
-    margin-top: 0;
-    color: #333;
+    margin: 0;
+    color: #929fe3;
     padding-bottom: 10px;
-    border-bottom: 1px solid #1d7c03;
+    border-bottom: 1px solid #929fe3;
     text-align: center;
+    font-size: 1.5rem;
 }
 
 #weather-info p {
     margin: 10px 0;
     font-size: 0.95rem;
+}
+
+.weathericon {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.weathericon h3 {
+    font-size: 2.5rem;
 }
 
 @media only screen and (max-width: 576px) {

@@ -40,11 +40,20 @@ function fetchWeatherData(data) {
   if (data) {
       content = `<div class="weather-info">    
       <h2>${data.name}, ${data.sys && data.sys.country}</h2>
-      <p><strong>Temperature:</strong> ${Math.round(data.main.temp)} °C</p>
+      <div class="weathericon">
+      <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].main}" title="${data.weather[0].description}"/>
+      <h3>${Math.round(data.main.temp)} °C</h3>
+      </div>
+      <div>
       <p><strong>Feels Like:</strong> ${Math.round(data.main.feels_like)} °C</p>
       <p><strong>Humidity:</strong> ${data.main.humidity} %</p>
       <p><strong>Pressure:</strong> ${data.main.pressure} hPa</p>
       <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+      </div>
+      <div>
+      <p><strong>Sunrise: ${formatUnixTime(data.sys.sunrise)}</p>
+      <p><strong>Sunset:  ${formatUnixTime(data.sys.sunset)}</p>
+      </div>
       </div>
     `;
   } else {
@@ -63,3 +72,15 @@ function searchCity() {
 }
 
 searchButton.addEventListener('click', searchCity);
+
+
+ function formatUnixTime(unixTime) {
+    let time = new Date(unixTime * 1000);
+
+    let hours = time.getUTCHours();
+    let minutes = time.getUTCMinutes();
+    let seconds = time.getUTCSeconds();
+
+    var formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    return formattedTime;
+}
