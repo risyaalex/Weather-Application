@@ -1,5 +1,5 @@
-const apiKey = "72041d4067825c55c76d14bc52f6fd85";
-// const apiKey = process.env.REACT_APP_API_KEY;
+// const apiKey = "72041d4067825c55c76d14bc52f6fd85";
+const apiKey = process.env.API_KEY;
 const cityInput = document.getElementById('city-input');
 const searchButton = document.getElementById('search-button');
 const weatherInfo = document.getElementById('weather-info');
