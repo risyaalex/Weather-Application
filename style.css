@@ -192,11 +192,16 @@ h2 {
     #search-button {
         margin: 20px 0 0 0;
     }
-    .sunrise {
+    .sunrise, .weather-info-main {
         display: block;
+        text-align: left;
     }
     .sunrise .full {
         width: 100%;
         text-align: center;
+    }
+    .weather-info-main .full {
+        width: 100%;
+        text-align: left;
     }
 }
