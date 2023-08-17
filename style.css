@@ -27,13 +27,7 @@ h2 {
 }
 
 .grid {
-    max-width: 500px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   text-align: center;
 
 }
 
@@ -77,14 +71,15 @@ h2 {
 
 .weather-info {
     margin-top: 20px;
-    padding: 20px;
+    padding: 30px;
     background-color: #ffffff;
     border-radius: 4px;
+    text-align: left;
 }
 .error {
     margin-top: 20px;
     padding: 20px;
-    background-color: #f3e1e1;
+    background-color: #ffc2c2;
     border-radius: 4px;
     color: red;
     text-align: center;
@@ -100,6 +95,9 @@ h2 {
 #weather-info h2 {
     margin-top: 0;
     color: #333;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #1d7c03;
+    text-align: center;
 }
 
 #weather-info p {
