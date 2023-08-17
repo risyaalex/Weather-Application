@@ -1,5 +1,4 @@
-netlify env:get API_KEY
-netlify env:get API_KEY --context production
+const API_KEY = process.env.REACT_APP_API_KEY
 
 const lat = 123; 
 const lon = 456; 
