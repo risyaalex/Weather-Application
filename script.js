@@ -61,7 +61,7 @@ function searchCity() {
     fetchData(cityName);
     }
   else {
-      weatherInfo.innerHTML = "Please enter city";
+      weatherInfo.innerHTML = "<p>Please enter city</p>";
     }
 }
 
