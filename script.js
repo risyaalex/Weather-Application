@@ -7,6 +7,8 @@ const weatherInfo = document.getElementById('weather-info');
 let data = null;
 let isLoading = false;
 
+// fetch Data
+
  async function fetchData(city) {
   const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
     try {
@@ -33,6 +35,8 @@ let isLoading = false;
     console.log("END OF FETCHING DATA...");
   }
 }
+
+// render Data
 
 function fetchWeatherData(data) {
   let content = "";
@@ -73,6 +77,7 @@ function fetchWeatherData(data) {
   weatherInfo.innerHTML = isLoading ? `<p class="error">Loading Data...</p>` : content;
 }
 
+// onclick search Button
 
 function searchCity() {
     const cityName = cityInput.value.trim();
@@ -81,6 +86,8 @@ function searchCity() {
 
 searchButton.addEventListener('click', searchCity);
 
+
+// format time
 
 function formatTimeWithAMPM(hours, minutes, seconds) {
     let period = hours >= 12 ? "PM" : "AM";
