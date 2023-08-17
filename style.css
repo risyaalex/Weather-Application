@@ -114,6 +114,10 @@ h2 {
     font-size: 2.5rem;
 }
 
+.sunrise {
+    border-top: 1px solid #929fe3;
+}
+
 @media only screen and (max-width: 576px) {
     
     h2 {

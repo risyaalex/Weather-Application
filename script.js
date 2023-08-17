@@ -50,7 +50,7 @@ function fetchWeatherData(data) {
       <p><strong>Pressure:</strong> ${data.main.pressure} hPa</p>
       <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
       </div>
-      <div>
+      <div class="sunrise">
       <p><strong>Sunrise: ${formatUnixTime(data.sys.sunrise)}</p>
       <p><strong>Sunset:  ${formatUnixTime(data.sys.sunset)}</p>
       </div>
@@ -81,6 +81,6 @@ searchButton.addEventListener('click', searchCity);
     let minutes = time.getUTCMinutes();
     let seconds = time.getUTCSeconds();
 
-    var formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    var formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
     return formattedTime;
 }
