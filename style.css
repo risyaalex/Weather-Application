@@ -1,11 +1,46 @@
-#app {
-    font-family: Arial, sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto Mono', monospace;
+    min-height: 90vh;
+    background: url("bg-image.jpg") no-repeat fixed center / cover;
+}
+
+h1 {
+    font-size: 2.3rem;
+    text-align: center;
+    margin: 50px 0;
+    text-transform: uppercase;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    text-align: center;
+    margin: 40px 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: flex-start;
+
+}
+
+.app {
+    
     max-width: 500px;
-    margin: 50px auto;
+    margin: 20px auto;
     padding: 20px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    background-color: #f7f7f7;
+    background-color: rgba(255, 255, 255, 0.8);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -18,7 +53,7 @@
 
 #search-button {
     display: inline-block;
-    background-color: #007bff;
+    background-color: #1d7c03;
     color: white;
     padding: 10px 20px;
     margin-left: 10px;
@@ -29,14 +64,23 @@
 }
 
 #search-button:hover {
-    background-color: #0056b3;
+    background-color: #2eaa0b;
 }
 
-#weather-info {
+.weather-info {
     margin-top: 20px;
     padding: 20px;
     background-color: #ffffff;
     border-radius: 4px;
+}
+.error {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    color: red;
+    text-align: center;
+    font-weight: bold;
 }
 
 #weather-info img {
@@ -53,4 +97,29 @@
 #weather-info p {
     margin: 10px 0;
     font-size: 0.95rem;
+}
+
+@media only screen and (max-width: 576px) {
+    
+    h2 {
+        font-size: 1.4rem;
+        text-align: center;
+        margin: 20px 20px;
+    }
+
+    .grid {
+        display: block;
+    }
+
+    .app {
+        max-width: 100%;
+        padding: 20px 30px;
+    }
+    #city-input {
+        width: calc(100% - 20px);
+    }
+
+    #search-button {
+        margin: 20px 0 0 0;
+    }
 }
