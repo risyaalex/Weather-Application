@@ -115,7 +115,27 @@ h2 {
 }
 
 .sunrise {
-    border-top: 1px solid #929fe3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+.weather-info-main {
+    display: flex;
+    justify-content: space-around;
+    padding-bottom: 10px;
+}
+.weather-info-main p {
+    font-size: 1.4rem;
+}
+
+.weather-description {
+    text-align: center;
+    padding-bottom: 20px;
+    color: #c4ccf3;
 }
 
 @media only screen and (max-width: 576px) {
@@ -140,5 +160,12 @@ h2 {
 
     #search-button {
         margin: 20px 0 0 0;
+    }
+    .sunrise {
+        display: block;
+    }
+    .sunrise .full {
+        width: 100%;
+        text-align: center;
     }
 }

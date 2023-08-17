@@ -42,20 +42,28 @@ function fetchWeatherData(data) {
       <h2>${data.name}, ${data.sys && data.sys.country}</h2>
       <div class="weathericon">
       <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="${data.weather[0].main}" title="${data.weather[0].description}"/>
-      <h3>${Math.round(data.main.temp)} °C</h3>
+      <h3>${Math.round(data.main.temp)}°C</h3>
       </div>
-      <div>
-      <p><strong>Feels Like:</strong> ${Math.round(data.main.feels_like)} °C</p>
-      <p><strong>Humidity:</strong> ${data.main.humidity} %</p>
-      <p><strong>Pressure:</strong> ${data.main.pressure} hPa</p>
-      <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+      <div class="weather-description"><h3>${data.weather[0].description}</h3></div>
+      <div class="weather-info-main">
+        <div class="full">
+        <p><strong>Feels Like:</strong> ${Math.round(data.main.feels_like)} °C</p>
+        <p><strong>Humidity:</strong> ${data.main.humidity} %</p>
+        </div> 
+        <div class="full">
+        <p><strong>Pressure:</strong> ${data.main.pressure} hPa</p>
+        <p><strong>Wind Speed:</strong> ${data.wind.speed} m/s</p>
+        </div> 
       </div>
       <div class="sunrise">
-      <p><strong>Sunrise: ${formatUnixTime(data.sys.sunrise)}</p>
-      <p><strong>Sunset:  ${formatUnixTime(data.sys.sunset)}</p>
+        <div class="full"><p><strong>Sunrise:</strong> ${formatUnixTimeToUTC(data.sys.sunrise, data.timezone)}</p></div>
+        <div class="full"><p><strong>Sunset:</strong>  ${formatUnixTimeToUTC(data.sys.sunset, data.timezone)}</p></div>  
       </div>
       </div>
     `;
+    console.log(data.sys.sunrise)
+    console.log(data.sys.sunset)
+    console.log(data.timezone)
   } else {
     content = `<p class="error">City not found or data unavailable...</p>`;
   }
@@ -74,13 +82,19 @@ function searchCity() {
 searchButton.addEventListener('click', searchCity);
 
 
- function formatUnixTime(unixTime) {
-    let time = new Date(unixTime * 1000);
+function formatTimeWithAMPM(hours, minutes, seconds) {
+    let period = hours >= 12 ? "PM" : "AM";
+    hours = hours % 12 || 12; 
+    let formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')} ${period}`;
+    return formattedTime;
+}
+
+function formatUnixTimeToUTC(unixTime, timeZoneOffsetSeconds) {
+    let time = new Date((unixTime + timeZoneOffsetSeconds) * 1000);
 
     let hours = time.getUTCHours();
     let minutes = time.getUTCMinutes();
     let seconds = time.getUTCSeconds();
 
-    var formattedTime = `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}`;
-    return formattedTime;
+    return formatTimeWithAMPM(hours, minutes, seconds);
 }
