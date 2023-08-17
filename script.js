@@ -1,4 +1,5 @@
-const API_KEY = process.env.API_KEY;
+netlify env:get API_KEY
+netlify env:get API_KEY --context production
 
 const lat = 123; 
 const lon = 456; 
