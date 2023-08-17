@@ -7,7 +7,7 @@
 
 body {
     font-family: 'Roboto Mono', monospace;
-    min-height: 90vh;
+    min-height: 100vh;
     background: url("bg-image.jpg") no-repeat fixed top / cover;
 }
 
@@ -28,7 +28,7 @@ h2 {
 
 .grid {
    text-align: center;
-
+   min-height: 70vh;
 }
 
 .app {
@@ -136,6 +136,37 @@ h2 {
     text-align: center;
     padding-bottom: 20px;
     color: #c4ccf3;
+}
+
+
+/* Footer */
+
+#footer {
+    padding: 30px 35px 20px;
+    background-color: #fff;
+    width: calc(100% - 70px);
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.footer-icons li {
+    list-style-type: none;
+    flex-basis: 40px;
+}
+
+.footer-icons .fa-brands {
+    margin: 0 2px;
+}
+
+.copy {
+    font-size: 0.8em;
+    font-weight: bold;
+    flex-grow: 1;
+    text-align: right;
 }
 
 @media only screen and (max-width: 576px) {
