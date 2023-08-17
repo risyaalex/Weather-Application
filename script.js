@@ -1,4 +1,4 @@
-const API_KEY = process.env.REACT_APP_API_KEY
+const apiKey = document.getElementById('app').getAttribute('data-api-key');
 
 const lat = 123; 
 const lon = 456; 
