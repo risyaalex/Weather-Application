@@ -8,7 +8,7 @@
 body {
     font-family: 'Roboto Mono', monospace;
     min-height: 90vh;
-    background: url("bg-image.jpg") no-repeat fixed center / cover;
+    background: url("bg-image.jpg") no-repeat fixed top / cover;
 }
 
 h1 {
@@ -27,9 +27,13 @@ h2 {
 }
 
 .grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    align-items: flex-start;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
 }
 
@@ -41,7 +45,7 @@ h2 {
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.8);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 #city-input {
@@ -49,6 +53,10 @@ h2 {
     width: 70%;
     border-radius: 4px;
     border: 1px solid #ddd;
+}
+
+#city-input:focus-visible {
+    box-shadow: 0 0px 5px #1d7c03;
 }
 
 #search-button {
@@ -76,7 +84,7 @@ h2 {
 .error {
     margin-top: 20px;
     padding: 20px;
-    background-color: #ffffff;
+    background-color: #f3e1e1;
     border-radius: 4px;
     color: red;
     text-align: center;
