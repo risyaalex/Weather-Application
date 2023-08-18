@@ -21,9 +21,6 @@ Project Link: [https://neon-gumption-dcb300.netlify.app/](https://neon-gumption-
 ## Notes
 This webpage seamlessly adapts to a multitude of devices and screen sizes, ensuring an optimal viewing experience for users across desktops, laptops, tablets, and smartphones.
 
-## License
-This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the license terms.
-
 ## Contact
 Oleksandra Antonova - werba2010@gmail.com
 
