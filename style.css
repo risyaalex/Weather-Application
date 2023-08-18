@@ -138,6 +138,16 @@ h2 {
     color: #c4ccf3;
 }
 
+.full {
+    align-self: center;
+}
+
+.full span {
+    position: relative;
+    top: 6px;
+    color: orange;
+}
+
 
 /* Footer */
 
@@ -168,6 +178,8 @@ h2 {
     flex-grow: 1;
     text-align: right;
 }
+
+
 
 @media only screen and (max-width: 576px) {
     

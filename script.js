@@ -60,8 +60,12 @@ function fetchWeatherData(data) {
         </div> 
       </div>
       <div class="sunrise">
-        <div class="full"><p><strong>Sunrise:</strong> ${formatUnixTimeToUTC(data.sys.sunrise, data.timezone)}</p></div>
-        <div class="full"><p><strong>Sunset:</strong>  ${formatUnixTimeToUTC(data.sys.sunset, data.timezone)}</p></div>  
+        <div class="full"><p><span class="material-symbols-outlined">
+water_lux
+</span> <strong>Sunrise:</strong> ${formatUnixTimeToUTC(data.sys.sunrise, data.timezone)}</p></div>
+        <div class="full"><p><span class="material-symbols-outlined">
+wb_twilight
+</span> <strong>Sunset:</strong>  ${formatUnixTimeToUTC(data.sys.sunset, data.timezone)}</p></div>  
       </div>
       </div>
     `;
@@ -77,7 +81,7 @@ function fetchWeatherData(data) {
   weatherInfo.innerHTML = isLoading ? `<p class="error">Loading Data...</p>` : content;
 }
 
-// onclick search Button
+
 
 function searchCity() {
     const cityName = cityInput.value.trim();
